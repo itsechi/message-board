@@ -1,0 +1,10 @@
+extends layout
+
+block content 
+  h1 Add a new message
+  form(method="POST" action="/new")  
+    label(for="name")= 'name: '
+    input#name(type="text" name="user" placeholder="enter your name" min=1 max=25)
+    label(for="text")= 'message: '
+    input#text(type="text" name="text" placeholder="enter your message" min=1 max=500)
+    button(type="submit") Submit

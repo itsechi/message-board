@@ -1,7 +1,13 @@
 extends layout
 
 block content 
-  h1 Mini message board
-  ul  
+  div(class="header")
+    h1= title
+    a(href="/new") Add a new message
+    
+  ul(class="messages")  
     each val in messages
-      li #{val.user}: '#{val.text}' (#{val.added})
+      li(class="message") 
+        p(class="message-user") #{val.user}
+        p(class="message-date") #{val.added}
+        p(class="message-text") #{val.text}

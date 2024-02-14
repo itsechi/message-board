@@ -1,13 +1,23 @@
 extends layout
 
 block content 
-  h1 Add a new message
-  form(method="POST" action="/new")  
-    label(for="name")= 'name: '
-    input#name(type="text" name="user" required placeholder="enter your name" min=1 max=25)
-    label(for="text")= 'message: '
-    input#text(type="text" name="text" required placeholder="enter your message" min=1 max=500)
-    button(type="submit") Submit
+  div(class="header")
+    h1= title
+
+  form(class="form" method="POST" action="/new")  
+    div(class="form-section")
+      label(for="name") Name
+        span= '(max. 20 characters)'
+      input#name(type="text" name="user" required placeholder="Enter your name" min=1 max=25)
+    div(class="form-section")
+      label(for="text") Message
+        span= '(max. 500 characters)'
+
+      input#text(type="text" name="text" required placeholder="Enter your message" min=1 max=500)
+
+    div(class="form-buttons")
+      a(href="/") Go back
+      button(type="submit") Add a message
 
   if errors 
     ul 

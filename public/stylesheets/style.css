@@ -47,6 +47,8 @@ a {
   padding: 2rem;
 }
 
+/* home page */
+
 .messages {
   list-style: none;
   padding-top: 1rem;
@@ -60,14 +62,14 @@ a {
 }
 
 .message-user {
-font-weight: 700;
-color: #242424;
+  font-weight: 700;
+  color: #242424;
 }
 
 .message-date {
-font-weight: 400;
-color: #9E9E9E;
-font-size: 14px;
+  font-weight: 400;
+  color: #9E9E9E;
+  font-size: 14px;
 }
 
 .message-text {
@@ -82,12 +84,69 @@ font-size: 14px;
 .message:nth-child(3n-1) .message-text {
   background: #44A3FF;
 }
+
 .message:nth-child(3n-2) .message-text {
   background: #C3C13D;
 }
 
 .message:nth-child(3n-3) .message-text {
   background: #A35FC0;
+}
+
+/* /new page */
+.form {
+  padding: 2rem;
+}
+
+.form-section {
+  background: #F4F7FE;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-section label {
+  font-weight: 700;
+}
+
+.form-section span {
+  margin-left: 0.25rem;
+  color: rgba(36, 36, 36, 0.6);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.form-section input {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-section:focus-within {
+  outline: 3px solid #44A3FF;
+}
+
+.form-buttons {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form-buttons button {
+  background: #44A3FF;
+  border-radius: 10px;
+  font-size: inherit;
+  font-family: inherit;
+  color: white;
+  padding: 0.5rem 2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 /* custom scrollbar */

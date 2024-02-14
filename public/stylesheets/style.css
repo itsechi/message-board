@@ -130,6 +130,11 @@ a {
   outline: 3px solid #44A3FF;
 }
 
+.form-error {
+  margin-bottom: 0.5rem;
+  color: red;
+}
+
 .form-buttons {
   gap: 1rem;
   display: flex;

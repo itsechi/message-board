@@ -6,14 +6,14 @@ const { body, validationResult } = require("express-validator");
 exports.message_list = asyncHandler(async (req, res, next) => {
   const allMessages = await Message.find().sort({ added: -1 }).exec();
   res.render("index", {
-    title: "Mini Messageboard",
+    title: "Mini Message Board",
     messages: allMessages,
   });
 });
 
 // display message form on GET
 exports.message_form_get = (req, res, next) => {
-  res.render("form", { title: "Add a message - Mini Messageboard" });
+  res.render("form", { title: "Add a message - Mini Message Board" });
 };
 
 // handle message form on POST
@@ -44,7 +44,7 @@ exports.message_form_post = [
     // if there are errors render the form with error messages
     if (!errors.isEmpty()) {
       res.render("form", {
-        title: "Add a message - Mini Messageboard",
+        title: "Add a message - Mini Message Board",
         errors: errors.array(),
       });
       return;

@@ -18,11 +18,27 @@ mongoose.connect(process.env.DB_URI).catch((err) => console.log('Error connectin
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
+// Set up rate limiter: maximum of twenty requests per minute
+const RateLimit = require("express-rate-limit");
+const limiter = RateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 20,
+});
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(compression());
+app.use(limiter); // Apply rate limiter to all requests
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"],
+    },
+  }),
+  );
 
 app.use("/", indexRouter);
 

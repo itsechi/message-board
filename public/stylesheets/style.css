@@ -79,6 +79,7 @@ a {
   color: white;
   max-width: 450px;
   margin-top: 0.5rem;
+  word-wrap: break-word;
 }
 
 .message:nth-child(3n-1) .message-text {

@@ -11,8 +11,8 @@ block content
           p(class="form-error")!=err.msg
     div(class="form-section")
       label(for="name") Name
-        span= '(max. 25 characters)'
-      input#name(type="text" name="user" required placeholder="Enter your name" min=1 max=25)
+        span= '(max. 40 characters)'
+      input#name(type="text" name="user" required placeholder="Enter your name" min=1 max=40)
     
     if errors 
       for err in errors 
@@ -21,7 +21,7 @@ block content
     div(class="form-section")
       label(for="text") Message
         span= '(max. 500 characters)'
-      input#text(type="text" name="text" required placeholder="Enter your message" min=1 max=500)
+      textarea#text(type="text" name="text" required placeholder="Enter your message" min=1 max=500 rows=10)
 
     div(class="form-buttons")
       a(href="/") Go back

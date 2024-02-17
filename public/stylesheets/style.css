@@ -118,7 +118,7 @@ a {
   font-size: 14px;
 }
 
-.form-section input {
+.form-section input, .form-section textarea {
   background: none;
   border: none;
   outline: none;
@@ -179,3 +179,4 @@ a {
 ::-webkit-scrollbar-corner {
   background: rgba(0, 0, 0, 0);
 }
+

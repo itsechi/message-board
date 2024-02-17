@@ -4,7 +4,7 @@ const { body, validationResult } = require("express-validator");
 
 // display all messages
 exports.message_list = asyncHandler(async (req, res, next) => {
-  const allMessages = await Message.find().sort({ added: -1 }).exec();
+  const allMessages = await Message.find().sort({ _id: -1 }).exec();
   res.render("index", {
     title: "Mini Message Board",
     messages: allMessages,

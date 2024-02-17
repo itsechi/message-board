@@ -29,7 +29,6 @@ main {
   background: #FFFFFF;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  /* padding: 3rem; */
   min-width: 700px;
   max-height: 90vh;
   overflow: hidden;
@@ -181,3 +180,33 @@ a {
   background: rgba(0, 0, 0, 0);
 }
 
+/* media queries */
+@media (max-width: 800px) {
+  main {
+    min-width: 250px;
+    margin: 1rem;
+  }
+
+  .header {
+    font-size: 14px;
+    height: 130px;
+    padding: 2rem;
+  }
+    
+  .messages {
+    padding-top: 1rem;
+    max-height: calc(90vh - 130px);
+    padding: 2rem;
+  }
+  
+  .form {
+    overflow-y: scroll;
+    max-height: calc(90vh - 130px);
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    font-size: 12px;
+  }
+}
